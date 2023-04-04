@@ -1,0 +1,12 @@
+:888 {
+  encode gzip
+  basicauth * {
+    USER PASSWORD
+  }
+  reverse_proxy * SITE {
+    header_up Host {http.reverse_proxy.upstream.hostport}
+    header_up X-Real-IP {http.request.remote}
+    header_up X-Forwarded-For {http.request.remote}
+    header_up X-Forwarded-Proto {http.request.scheme}
+  }
+}
