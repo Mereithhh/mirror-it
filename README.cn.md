@@ -1,6 +1,8 @@
 # Mirror-it
 一键镜像任何网站，基于 caddy 和 docker。
 
+- 可以用于给不能访问的网站搭建镜像站，给朋友们使用。
+
 [English](README.md)
 
 ## 快速开始

@@ -1,5 +1,8 @@
 # Mirror-it
 One Command to mirror any website, powered by caddy and docker.
+
+- Can be used to build a mirror site for a website that cannot be accessed, for friends to use.
+
 [中文说明](README.cn.md)
 
 ## Quick Start
