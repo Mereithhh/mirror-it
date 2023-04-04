@@ -1,21 +1,21 @@
 # Mirror-it
-一键镜像任何网站，基于 caddy 和 docker。
-[English Version](README.en.md)
+One Command to mirror any website, powered by caddy and docker.
+[中文说明](README.cn.md)
 
-## 快速开始
-### 镜像 Google
-如果你已经安装了 docker，可以运行下面的命令来镜像 google.com，端口为 8888
+## Quick Start
+### Mirror Google
+if you have docker installed, you can run the following command to mirror google.com on port 8888
 ```bash
 docker run --name mirror-it -p 8888:888 -e SITE="https://www.google.com" mereith/mirror-it
 ```
-### 安装 Docker
-如果你没有安装 docker，可以使用下面的链接来安装：
+### Install Docker
+if you don't have docker installed, you can use the following link to install it:
 ```bash
-curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+curl -fsSL https://get.docker.com | bash -s docker
 ```
 
-## 加密
-为了防止镜像站被滥用，可以设置加密，只有知道密码的人才能访问镜像站。下面是一个例子，账号密码为 `admin`：
+## Authentication
+To prevent the mirror site from being abused, you can set up authentication, so that only people who know the password can access the mirror site. Here is an example, the account password is `admin`:
 ```bash
 docker run --name mirror-it -p 8888:888 \
   -e SITE="https://www.google.com" \
@@ -24,12 +24,10 @@ docker run --name mirror-it -p 8888:888 \
   -e ENABLE_AUTH="true" \
   mereith/mirror-it
 ```
-
-
-## 环境变量
-| 环境变量 | 说明 |
+## Environment Variables
+| Environment Variable | Description |
 | --- | --- |
-| USER | 用户名 |
-| PASSWORD | 密码 |
-| SITE | 要镜像的网站 |
-|ENABLE_AUTH|是否启用加密，true 启用，其他不启用|
+| USER | Username |
+| PASSWORD | Password |
+| SITE | Site to mirror |
+|ENABLE_AUTH| set true to enable Authentication|
